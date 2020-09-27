@@ -1,7 +1,7 @@
-// J'ai récupéré les données avec fetch puis j'ai saisi le HTML directement sur le JS
-
+///// Je stock l'url 
 const url = "http://localhost:3000/api/teddies";
 
+///// Je récupère les données du serveur et je les utilise
 function fetchData() {
     fetch(url)
         .then(response => {
@@ -34,8 +34,10 @@ function fetchData() {
                 .querySelector('#app')
                 .insertAdjacentHTML('afterbegin', html);
         })
+        ///// Je renvoi d'éventuelles erreurs
         .catch(error => {
             console.log(error);
         });
 }
+///// J'appelle ma function
 fetchData();
