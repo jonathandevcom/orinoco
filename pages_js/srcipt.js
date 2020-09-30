@@ -21,7 +21,7 @@ function fetchData() {
                 <h2>${ours.name}</h2>
                 <p>${ours.description}</p>
                 <p>Tarif : ${ours.price} €</p>
-              <a href="pages_html/produit.html?id${ours._id}" <button  class="btn btn-primary">Voir le produit</button></a>
+               <a href="pages_html/produit.html?id${ours._id}" <button  class="btn btn-primary">Voir le produit</button></a>
                 </div>
                 </div>
                 </article>
@@ -34,7 +34,7 @@ function fetchData() {
                 .querySelector('#app')
                 .insertAdjacentHTML('afterbegin', html);
         })
-        ///// Je renvoi d'éventuelles erreurs
+        ///// Je renvoi des éventuelles erreurs
         .catch(error => {
             console.log(error);
         });
