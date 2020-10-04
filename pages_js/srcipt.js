@@ -11,7 +11,7 @@ function fetchData() {
             return response.json();
         })
         .then(data => {
-            //console.log(data);
+            ///// J'insère le html dynamiquement et il évolue selon le nombre de produit disponible sur le serveur
             const html = data.map(ours => {
                 return `
                 <article class="col-xs-12  col-sm-6 col-md-6 col-lg-4" >                 
