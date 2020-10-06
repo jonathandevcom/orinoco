@@ -32,7 +32,7 @@ function produitData () { fetch(urlIndividuelle)
         
         /////J'insère le prix du produit
         let prixOurs = document.querySelector("#price");
-        prixOurs.innerHTML = "Tarif : " + data.price + " €";
+        prixOurs.innerHTML = "Tarif : " + data.price/100 + " €";
      
         /////J'insère le choix de la couleur du produit selon le nombre de couleur possible
         let couleurOurs = document.querySelector("#couleur");

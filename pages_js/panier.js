@@ -1,8 +1,31 @@
+function formulaire () {
+  'use strict';
+  window.addEventListener('load', function () {
+      let form = document.getElementById('needs-validation');
+      form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+      }, false);
+  }, false);
+}
+formulaire();
+
+
+
 ///// Je sélectionne l'id correspondant à mon tableau
 let ajoutAuPanier = document.querySelector('#tableau');
 
 ///// Je créer la variable x (-1 afin que tous les produits s'affichent) 
 let x = -1;
+
+    
+
+
+
+
 
 if (localStorage.length == 0){
   alert('Votre pannier est vide');
@@ -10,14 +33,14 @@ if (localStorage.length == 0){
 
  while (x < localStorage.length) {
  x++
-    ///// Je déclare des variables pour récupérer les données du local storage
+
+///// Je déclare des variables pour récupérer les données du local storage
     let objLinea = localStorage.getItem(`selection${x}`);
     let objJson = JSON.parse(objLinea);
  
     ///// Je déclare une variable pour calculer le prix (prix de l'ours x le nombre commandé)
-    let prixTotalParArticle = objJson.prix * objJson.quantite;
+    let prixTotalParArticle = objJson.prix/100 * objJson.quantite;
 
- 
     ///// J'insère mon HTML
     ajoutAuPanier.insertAdjacentHTML("afterbegin", `
           <tr>
@@ -54,3 +77,4 @@ if (nom.validity.valueMissing){
 button.addEventListener ('click', validation);
  
 */
+

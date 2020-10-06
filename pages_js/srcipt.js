@@ -20,7 +20,7 @@ function fetchData() {
                 <p><img style=width:250px; src="${ours.imageUrl}"alt="${ours.name}"></p>
                 <h2>${ours.name}</h2>
                 <p>${ours.description}</p>
-                <p>Tarif : ${ours.price} €</p>
+                <p>Tarif : ${ours.price/100} €</p>
                <a href="pages_html/produit.html?id${ours._id}" <button  class="btn btn-primary">Voir le produit</button></a>
                 </div>
                 </div>
