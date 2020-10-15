@@ -41,3 +41,14 @@ h1{
   max-width: 800px ;
   
 } 
+
+/* page panier */
+#titre-panier-vide{
+ text-align : center;
+ font-size: 60px;
+ margin-top: 30px;
+}
+
+#total-panier{
+  font-size: 30px;
+}

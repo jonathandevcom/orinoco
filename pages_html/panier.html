@@ -3,134 +3,133 @@
 <html lang="fr" xmlns="http://www.w3.org/199/xhtml">
 
 <head>
-  <meta name="viexport" content="width=device-width, initial-scale=1" charset="utf-8" />
+    <meta name="viexport" content="width=device-width, initial-scale=1" charset="utf-8" />
 
-  <title>Orinoco votre panier</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link href="../style.css" rel="stylesheet" type="text/css" />
+    <title>Orinoco votre panier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="../style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <header>
-    <a href="../index.html"><img src="../images/Orinoco.png"></a>
-  </header>
+    <header>
+        <a href="../index.html"><img src="../images/Orinoco.png"></a>
+    </header>
 
-  <main>
-    <div class=container>
-      <h1>Votre panier</h1>
+    <main>
+        <div class=container>
+            <section>
+                <h1>Votre panier</h1>
 
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Nom</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Prix</th>
-          </tr>
-        </thead>
-        <tbody id="tableau">
+                <table id="tableau" class="table table-bordered">
+                    <thead>
+                        <tr class="col-lg-8">
+                            <th scope="col">Nom</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Prix</th>
+                        </tr>
+                    </thead>
+                     <tbody id="tableau">
+                  </tbody>
+                </table>
+                <div id="montant-total">
+                </div>
 
-          <tr>
-            <td colspan="3">Prix total  €</td>
-          </tr>
+                <button type="button" id="vider-panier" class="btn btn-danger btn-sm">Vider le panier</button>
 
-          
-        </tbody>
-      </table>
-
-      <div class="container py-5">  
-        <div class="row">  
-            <div class="offset-md-2 col-md-8 offset-md-2">  
-                <div class="card">  
-                    <div class="card-header bg-primary text-white">  
-                        <h4 class="card-title text-uppercase">Formulaire</h4>  
-                    </div>  
-                    <div class="card-body">  
-                        <form id="needs-validation" novalidate>
-                            <div class="row">
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="firstname">Prénom</label>
-                                        <input type="text" id="firstname" placeholder="Prénom" class="form-control" aria-describedby="inputGroupPrepend" required />
-                                        <div class="invalid-feedback">
-                                            Merci de saisir votre prénom.
+                
+            </section>
+            <section class="container py-5">
+                <div class="row">
+                    <div class="offset-md-2 col-md-8 offset-md-2">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h4 class="card-title text-uppercase">Formulaire</h4>
+                            </div>
+                            <div class="card-body">
+                                <form id="needs-validation" novalidate>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="firstname">Prénom</label>
+                                                <input type="text" id="firstname" placeholder="Prénom"
+                                                    class="form-control" aria-describedby="inputGroupPrepend"
+                                                    required />
+                                                <div class="invalid-feedback">
+                                                    Merci de saisir votre prénom.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="lastname">Nom</label>
+                                                <input type="text" id="lastname" placeholder="Nom" class="form-control"
+                                                    aria-describedby="inputGroupPrepend" required />
+                                                <div class="invalid-feedback">
+                                                    Merci de saisir votre nom.
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="lastname">Nom</label>
-                                        <input type="text" id="lastname" placeholder="Nom" class="form-control" aria-describedby="inputGroupPrepend" required />
-                                        <div class="invalid-feedback">
-                                            Merci de saisir votre prénom.
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Email"
+                                                    aria-describedby="inputGroupPrepend" required>
+                                                <div class="invalid-feedback">
+                                                    Merci de saisir une adresse mail valide.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="address">Adresse</label>
+                                                <input type="text" class="form-control" id="address"
+                                                    placeholder="Adresse" aria-describedby="inputGroupPrepend" required>
+                                                <div class="invalid-feedback">
+                                                    Merci de saisir votre adresse.
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Email" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Merci de saisir une adresse mail valide.
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-xs-12">
+                                            <div class="form-group">
+                                                <label for="city">Ville</label>
+                                                <input type="text" class="form-control" id="ville" placeholder="Ville"
+                                                    aria-describedby="inputGroupPrepend" required>
+                                                <div class="invalid-feedback">
+                                                    Merci de saisir votre ville.
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="address">Adresse</label>
-                                        <input type="text" class="form-control" id="address" placeholder="Adresse" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Merci de saisir votre adresse.
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-xs-12">
+                                            <div class="float-right">
+                                                <button id="validation" class="btn btn-primary rounded-0" type="submit">Valider</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-md-6 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="city">Ville</label>
-                                        <input type="text" class="form-control" id="ville" placeholder="Ville" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                            Merci de saisir votre ville.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="comment">Commentaires</label>
-                                        <textarea class="form-control" rows="3" id="comment" placeholder="Veuillez laisser vos commentaires pour la livraison" aria-describedby="inputGroupPrepend"></textarea>                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-12 col-xs-12">
-                                    <div class="float-right">
-                                        <button class="btn btn-primary rounded-0" type="submit">Valider</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>  
-                    </div>  
-                </div>  
-            </div>  
-        </div>  
-    </div>  
-    
-  </main>
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+    </main>
 
 
-  <footer>
-    <div class="button_footer">
-      <a class="effet" href="../pages_html/panier.html">Votre panier</a>
-      <a class="effet" href="mailto:contact@orinoco.com">Contactez-nous</a>
-    </div>
-  </footer>
+    <footer>
+        <div class="button_footer">
+            <a class="effet" href="../pages_html/panier.html">Votre panier</a>
+            <a class="effet" href="mailto:contact@orinoco.com">Contactez-nous</a>
+        </div>
+    </footer>
 
-  <script type="text/javascript" src="../pages_js/panier.js"></script> 
+    <script type="text/javascript" src="../pages_js/panier.js"></script>
 </body>
 
 </html>
