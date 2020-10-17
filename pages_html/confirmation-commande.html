@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="fr" xmlns="http://www.w3.org/199/xhtml">
+
 <head>
     <meta name="viexport" content="width=device-width, initial-scale=1" charset="utf-8" />
-
     <title>Orinoco confirmation de votre commande</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -14,20 +13,24 @@
     <header>
         <a href="../index.html"><img src="../images/Orinoco.png"></a>
     </header>
-
     <main>
-        <h1>Votre commande est validée</h1>
-        <p>Toute l'équipe d'Orinoco vous remercie pour votre commande</p>
-        <p>Votre commande d'un montant total de <span id="montant-total"></span> euros porte le numéro<span id="reponse-serveur"></span> </p>
+        <section id="section-confirmation">
+            <h1>Votre commande est validée</h1>
+            <p class="commande"> Toute l'équipe d'Orinoco vous remercie pour vos achats.</p>
+            <p class="commande">Votre commande d'un montant total de <span id="montant-total"></span> euros porte le
+                numéro<span id="reponse-serveur"></span> </p>
+            <div id="button-end" >
+            <a href="../index.html"><button class="btn btn-primary" >Retourner à la page d'accueil</button></a>  
+            </div>
+        </section>
     </main>
-
-
     <footer>
         <div class="button_footer">
             <a class="effet" href="mailto:contact@orinoco.com">Contactez-nous</a>
         </div>
+
     </footer>
- <!--   <script type="text/javascript" src="confirmation-commande.js"></script>-->
-</body>
+  <script type="text/javascript" src="../pages_js/confirmation-commande.js"></script>
+  </body>
 
 </html>

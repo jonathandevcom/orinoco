@@ -1,11 +1,28 @@
-let montantTotal = document.querySelector('#montant-total');
-let reponseServeur = document.querySelector('#reponse-serveur');
+///// Je créer la variables montant total
+let ajoutMontantTotal = document.querySelector('#montant-total');
 
-const getLocalStorage = function () {
-    objLinea = localStorage.getItem(`selectionArticle`);
-    objJson = JSON.parse(objLinea);
+///// Je récupère ma fonction montantTotal
+function montantTotal() {
+  recoverLocalStorage = localStorage.getItem(`selectionArticle`);
+  dataLocalStorage = JSON.parse(recoverLocalStorage);
+  let calculPrixTotal = [];
+  for (dataLocalStorage of dataLocalStorage) {
+    let articlePrix = dataLocalStorage.prixTotal;
+    calculPrixTotal.push(articlePrix)
   }
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  let totalPrix = calculPrixTotal.reduce(reducer, 0);
+  ajoutMontantTotal.insertAdjacentHTML("afterbegin", `${totalPrix}`)
+}
+montantTotal()
 
-montantTotal.insertAdjacentHTML("afterbegin", `${objJson.prixTotal}`);
+///// J'inclus le numéro de commande dans le message
+numeroCommande = localStorage.getItem(`reponseServeur`)
+let ajoutNumeroCommande = document.querySelector('#reponse-serveur');
+ajoutNumeroCommande.insertAdjacentHTML("afterbegin", ` ${numeroCommande}.`);
 
-reponseServeur.insertAdjacentHTML("afterbegin", `${objJson}`);
+///// Le bouton efface le localStorage et renvoi sur la page d'acceuil
+let end = document.querySelector('#button-end');
+end.addEventListener('click', function () {
+  localStorage.clear()
+})

@@ -21,7 +21,7 @@ function produitData() {
 
             /////J'insère la photo du produit
             let image = document.querySelector("#img");
-            image.insertAdjacentHTML("afterbegin", `<img class="img-responsive" id="img" alt="photo ours" src=${data.imageUrl}> </img>`);
+            image.insertAdjacentHTML("afterbegin", `<img class="img-fluid card-img-top" id="img" alt="photo ours" src=${data.imageUrl}> </img>`);
 
             /////J'insère le nom du produit
             let nameOurs = document.querySelector("h3");
@@ -44,15 +44,14 @@ function produitData() {
             ///// Je sélectionne le boutton pour l'ajouter au panier
             let selection = document.querySelector('#myBtn');
 
-            ///// Je créer ma funtion pour ajouter les produits au pannier
+            ///// Je créer ma fonction pour ajouter les produits au pannier
             function ajouterAuPanier() {
                 let nombre = document.querySelector("#in").value;
-                // let colors = document.querySelector("#choix-couleur").value;
 
                 // Je calcul le prix total par article
                 let calculPrixTotal = data.price / 100 * nombre;
 
-              //  let carte = []
+                //  let carte = []
 
                 let carte = {
                     nom: data.name,
@@ -60,16 +59,17 @@ function produitData() {
                     quantite: nombre,
                     prixTotal: calculPrixTotal,
                     id: data._id,
-                    //  couleur : colors,
                 }
 
+                ///// Le 1er article est envoyé au localStorage
                 const ajoutArticle = localStorage.getItem("selectionArticle")
                 if (ajoutArticle) {
                     teddiesArray = JSON.parse(ajoutArticle);
                     teddiesArray.push(carte);
                     localStorage.setItem('selectionArticle', JSON.stringify(teddiesArray));
                     alert('Votre nouvel article a été ajouté au panier');
-
+                
+                ///// Les articles suivants sont envoyés
                 } else {
                     teddiesArray = [];
                     teddiesArray.push(carte);

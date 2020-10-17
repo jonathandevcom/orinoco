@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="fr" xmlns="http://www.w3.org/199/xhtml">
 
 <head>
     <meta name="viexport" content="width=device-width, initial-scale=1" charset="utf-8" />
-
     <title>Orinoco Descritptif du produit</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -16,23 +14,21 @@
         <a href="../index.html"><img src="../images/Orinoco.png"></a>
     </header>
 
-    <main>
-        <div class="card my-3 mx-5" id="produit">
-            <div class="card-body mx-auto" id="img">
-                <h3 class="card-title"></h3>
-                <p id="descritptif" class="card-text"></p>
-                <p id="price"></p>
-                <select  class="custom-select">
-                    <option id="couleur" selected>Choisir la couleur</option>
-                </select>
-                <div class="input-group mt-3 mb-1">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Quantité</span>
-                    </div>
-                    <input type="text" class="form-control" id="in" value="1">
+    <main class="card mb-5 px-2" id="produit">
+        <div class=" mx-auto mt-3 mb-3" id="img">
+            <h3 class="card-title mt-3"></h3>
+            <p id="descritptif" class="card-text"></p>
+            <p id="price"></p>
+            <select class="custom-select">
+                <option id="couleur" selected>Choisir la couleur</option>
+            </select>
+            <div class="input-group mt-3 mb-1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Quantité</span>
                 </div>
-                <button type="button" id="myBtn" class="btn btn-primary mt-3" >Ajouter au panier</button>                    
-            </div>   
+                <input type="text" class="form-control" id="in" value="1">
+            </div>
+            <button type="button" id="myBtn" class="btn btn-primary mt-3">Ajouter au panier</button>
         </div>
     </main>
 

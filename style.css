@@ -36,10 +36,17 @@ h1{
  margin : 40px;
 }
 
+/* page d'acceuil */ 
+#pas-acces-serveur{
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 50 px;
+  margin: 15px;
+}
+
 /* page produit */
 #img {
   max-width: 800px ;
-  
 } 
 
 /* page panier */
@@ -51,4 +58,20 @@ h1{
 
 #total-panier{
   font-size: 30px;
+}
+
+/* page confirmation commande */
+.commande{
+  text-align: center;
+  font-size: 20px;
+
+}
+
+#section-confirmation{
+  margin: 15px;
+}
+
+#button-end{
+  text-align: center;
+  margin-top: 40px;
 }
