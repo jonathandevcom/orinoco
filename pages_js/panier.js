@@ -1,4 +1,4 @@
-///// Je créer des variables pour accéder aux différents éléments
+///// Création des variables pour accéder aux différents éléments
 let ajoutAuPanier = document.querySelector('#tableau');
 let viderPanier = document.querySelector('#vider-panier');
 let tableau = document.querySelector('#tableau');
@@ -6,13 +6,13 @@ let titre = document.querySelector('h1');
 let ajoutMontantTotal = document.querySelector('#montant-total');
 let validation = document.querySelector("#validation");
 
-///// Je créer ma fonction pour récuper les éléments sur le localStorage
+///// Création d'une fonction pour récuperer les éléments sur le localStorage
 function getLocalStorage() {
   objLinea = localStorage.getItem(`selectionArticle`);
   objJson = JSON.parse(objLinea);
 }
 
-///// Je créer ma fonction pour afficher mon tableau et qui supprime le texte présent
+///// Création fonction pour afficher mon tableau et qui supprime le texte présent
 function affichageTableau() {
   if (localStorage.length == 0) {
     ajoutAuPanier.insertAdjacentHTML('afterend', `<h2 id="titre-panier-vide"> Votre panier est vide </h2>`)
@@ -23,7 +23,7 @@ function affichageTableau() {
     getLocalStorage()
     for (x = 0; x < objJson.length; x++) {
 
-      ///// J'insère mon HTML
+      ///// Insertion du HTML
       ajoutAuPanier.insertAdjacentHTML("afterbegin", `
           <tr>
             <td>${objJson[x].nom}</td>
@@ -37,13 +37,14 @@ function affichageTableau() {
 }
 affichageTableau()
 
-///// évenement au clic pour vider le panier
+///// Evenement au clic pour vider le panier
 viderPanier.addEventListener('click', function () {
   event.preventDefault()
   localStorage.clear()
+  location.reload()
 })
 
-///// Je créer la fonction pour calculer le montant total et l'ajouter sur la page
+///// Création de la fonction pour calculer le montant total et l'ajouter sur la page
 function montantTotal() {
   getLocalStorage();
   let calculPrixTotal = [];
@@ -56,41 +57,8 @@ function montantTotal() {
   ajoutMontantTotal.insertAdjacentHTML("afterbegin", `<p id="total-panier"> Prix total : ${totalPrix} €</p>`)
 }
 montantTotal()
-/*
-const contact = {
-firstName :"nom",
-lastName :"nom",
-address :"nom",
-city :"nom",
-email :"nom@mail.com",
-}
-*/
 
-const prenom = document.getElementById("firstname");
-const nom = document.getElementById("lastname");
-const adresse = document.getElementById("address");
-const ville = document.getElementById("city");
-const mail = document.getElementById("email");
-
-const contact = {
-firstName : `${prenom.value}`,
-lastName : nom.value,
-address : adresse.value,
-city : ville.value,
-email : mail.value,
-}
-
-
-///// Je créer le tableau avec l'Id du produit
-let products = [objJson.id];
-
-///// Je créer mon objet pour l'envoyer au serveur
-let objet = {
-  contact,
-  products,
-}
-
-///// Je créer la fonction formulaireFalse si les données sont mal saisies
+///// Création d'une fonction formulaireFalse si les données sont mal saisies
 function formulaireFalse() {
   'use strict';
   window.addEventListener('load', function () {
@@ -99,14 +67,14 @@ function formulaireFalse() {
       if (form.checkValidity() === false) {
         event.preventDefault();
         event.stopPropagation();
-      } 
+      }
       form.classList.add('was-validated');
     }, false);
   }, false);
 }
 formulaireFalse()
 
-///// Je créer la fonction formulaireTrue si les données sont bien saisies
+///// Création d'une fonction formulaireTrue si les données sont bien saisies. Cette fonction renvoie la fonction post
 function formulaireTrue() {
   'use strict';
   window.addEventListener('load', function () {
@@ -116,15 +84,33 @@ function formulaireTrue() {
         event.preventDefault();
         event.stopPropagation();
         post()
-      } 
+      }
       form.classList.add('was-validated');
     }, true);
   }, true);
 }
 formulaireTrue()
 
-///// Je créer la fonction post pour tout envoyer au serveur
+///// Création de la fonction post pour envoyer les données au serveur
 function post() {
+
+  //// Création de l'objet contact
+  const contact = {
+    firstName: document.getElementById("first-name").value,
+    lastName: document.getElementById("last-name").value,
+    address: document.getElementById("address").value,
+    city: document.getElementById("city").value,
+    email: document.getElementById("email").value,
+  }
+
+  ///// Création du tableau avec l'Id du produit
+  let products = [objJson.id];
+
+  ///// Création de l'objet : objet pour l'envoyer au serveur
+  let objet = {
+    contact,
+    products,
+  }
   fetch("http://localhost:3000/api/teddies/order", {
     method: 'POST',
     headers: {
@@ -132,14 +118,14 @@ function post() {
     },
     body: JSON.stringify(objet),
   })
-  .then((response) => {
-    if (!response.ok) {
-      throw Error("ERROR");
-    }
-    return response.json();
-  })
-  .then((data) => {
-    localStorage.setItem("reponseServeur", data.orderId);
-    window.location.href = "confirmation-commande.html";
-  })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error("ERROR");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      localStorage.setItem("reponseServeur", data.orderId);
+      window.location.href = "confirmation-commande.html";
+    })
 }

@@ -1,22 +1,20 @@
-
-
-///// Je stock l'url 
+///// Stockage de l'url 
 const url = "http://localhost:3000/api/teddies";
 
-///// Je récupère les données du serveur et je les utilise
+///// Récupération des données du serveur et utilisation de celles-ci
 function fetchData() {
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw Error("ERROR");   
+                throw Error("ERROR");
             }
             return response.json();
         })
         .then(data => {
-            ///// Je supprime le message d'erreur en cas de panne du serveur
+            ///// Suppression du message d'erreur en cas de panne du serveur
             let problemeServeur = document.querySelector('#pas-acces-serveur');
             problemeServeur.remove();
-            ///// J'insère le html dynamiquement qui il évolue selon le nombre de produit disponible sur le serveur
+            ///// Insertion du code html dynamiquement selon le nombre de produit créé sur le serveur
             const html = data.map(ours => {
                 return `
                 <article class="col-xs-12  col-sm-6 col-md-6 col-lg-4" >                 
@@ -37,10 +35,10 @@ function fetchData() {
                 .querySelector('#app')
                 .insertAdjacentHTML('afterbegin', html);
         })
-        ///// Je renvoi des éventuelles erreurs
+        ///// Renvoi des éventuelles erreurs
         .catch(error => {
             console.log(error);
         });
 }
-///// J'appelle ma function
+///// Appel de la function
 fetchData();
