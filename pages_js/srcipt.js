@@ -40,5 +40,5 @@ function fetchData() {
             console.log(error);
         });
 }
-///// Appel de la function
+///// Appel de la fonction
 fetchData();

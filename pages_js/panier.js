@@ -1,5 +1,4 @@
 ///// Création des variables pour accéder aux différents éléments
-let ajoutAuPanier = document.querySelector('#tableau');
 let viderPanier = document.querySelector('#vider-panier');
 let tableau = document.querySelector('#tableau');
 let titre = document.querySelector('h1');
@@ -15,7 +14,7 @@ function getLocalStorage() {
 ///// Création fonction pour afficher mon tableau et qui supprime le texte présent
 function affichageTableau() {
   if (localStorage.length == 0) {
-    ajoutAuPanier.insertAdjacentHTML('afterend', `<h2 id="titre-panier-vide"> Votre panier est vide </h2>`)
+    tableau.insertAdjacentHTML('afterend', `<h2 id="titre-panier-vide"> Votre panier est vide </h2>`)
     tableau.remove();
     viderPanier.remove();
     titre.remove();
@@ -24,7 +23,7 @@ function affichageTableau() {
     for (x = 0; x < objJson.length; x++) {
 
       ///// Insertion du HTML
-      ajoutAuPanier.insertAdjacentHTML("afterbegin", `
+      tableau.insertAdjacentHTML("afterbegin", `
           <tr>
             <td>${objJson[x].nom}</td>
             <td>${objJson[x].quantite}</td>
@@ -96,8 +95,8 @@ function post() {
 
   //// Création de l'objet contact
   const contact = {
-    firstName: document.getElementById("first-name").value,
-    lastName: document.getElementById("last-name").value,
+    firstName: document.getElementById("firstname").value,
+    lastName: document.getElementById("lastname").value,
     address: document.getElementById("address").value,
     city: document.getElementById("city").value,
     email: document.getElementById("email").value,

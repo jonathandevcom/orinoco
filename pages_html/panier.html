@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/199/xhtml">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta name="viexport" content="width=device-width, initial-scale=1" charset="utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viexport" content="width=device-width, initial-scale=1" />
     <title>Orinoco votre panier</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -11,7 +12,7 @@
 
 <body>
     <header>
-        <a href="../index.html"><img src="../images/Orinoco.png"></a>
+        <a href="../index.html"><img src="../images/Orinoco.png" alt="logo-Orinoco"></a>
     </header>
 
     <main class=container>
@@ -25,7 +26,6 @@
                         <th scope="col">Prix</th>
                     </tr>
                 </thead>
-                <tbody id="tableau"></tbody>
             </table>
             <div id="montant-total">
             </div>
@@ -44,8 +44,8 @@
                                     <div class="col-sm-6 col-md-6 col-xs-12">
                                         <div class="form-group">
                                             <label for="firstname">Prénom</label>
-                                            <input type="text" id="first-name" name="firstname" placeholder="Prénom"
-                                                class="form-control" aria-describedby="inputGroupPrepend" required />
+                                            <input type="text" id="firstname" name="firstname" placeholder="Prénom"
+                                                class="form-control" required />
                                             <div class="invalid-feedback">
                                                 Merci de saisir votre prénom.
                                             </div>
@@ -54,8 +54,8 @@
                                     <div class="col-sm-6 col-md-6 col-xs-12">
                                         <div class="form-group">
                                             <label for="lastname">Nom</label>
-                                            <input type="text" id="last-name" name="lastname" placeholder="Nom"
-                                                class="form-control" aria-describedby="inputGroupPrepend" required />
+                                            <input type="text" id="lastname" name="lastname" placeholder="Nom"
+                                                class="form-control" required />
                                             <div class="invalid-feedback">
                                                 Merci de saisir votre nom.
                                             </div>
@@ -67,7 +67,7 @@
                                         <div class="form-group">
                                             <label for="email">Email</label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                placeholder="Email" aria-describedby="inputGroupPrepend" required>
+                                                placeholder="Email" required>
                                             <div class="invalid-feedback">
                                                 Merci de saisir une adresse mail valide.
                                             </div>
@@ -77,7 +77,7 @@
                                         <div class="form-group">
                                             <label for="address">Adresse</label>
                                             <input type="text" class="form-control" id="address" name="address"
-                                                placeholder="Adresse" aria-describedby="inputGroupPrepend" required>
+                                                placeholder="Adresse" required>
                                             <div class="invalid-feedback">
                                                 Merci de saisir votre adresse.
                                             </div>
@@ -89,7 +89,7 @@
                                         <div class="form-group">
                                             <label for="city">Ville</label>
                                             <input type="text" class="form-control" id="city" name="city"
-                                                placeholder="Ville" aria-describedby="inputGroupPrepend" required>
+                                                placeholder="Ville" required>
                                             <div class="invalid-feedback">
                                                 Merci de saisir votre ville.
                                             </div>
@@ -107,6 +107,7 @@
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
         </section>
     </main>

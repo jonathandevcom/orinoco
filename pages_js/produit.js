@@ -1,4 +1,4 @@
-///// Stockage l'url principale
+///// Stockage l'url principal
 const url = "http://localhost:3000/api/teddies";
 
 ///// Récupération de l'id du produit
@@ -41,7 +41,7 @@ function produitData() {
                 couleurOurs.insertAdjacentHTML("afterend", `<option id="choix-couleur">${data.colors[i]}</option>"`);
             }
 
-            ///// Sélection du boutton pour ajouter l'article au panier
+            ///// Sélection du bouton pour ajouter l'article au panier
             let selection = document.querySelector('#myBtn');
 
             ///// Fonction pour ajouter les produits au pannier
@@ -86,5 +86,5 @@ function produitData() {
             console.log(error);
         });
 }
-///// Appel de la function    
+///// Appel de la fonction    
 produitData()
