@@ -60,7 +60,7 @@ function produitData() {
                     id: data._id,
                 }
 
-                ///// Le 1er article est envoyé au localStorage
+                ///// Les articles suivants sont envoyés au localStorage
                 const ajoutArticle = localStorage.getItem("selectionArticle")
                 if (ajoutArticle) {
                     teddiesArray = JSON.parse(ajoutArticle);
@@ -68,7 +68,7 @@ function produitData() {
                     localStorage.setItem('selectionArticle', JSON.stringify(teddiesArray));
                     alert('Votre nouvel article a été ajouté au panier');
 
-                    ///// Les articles suivants sont envoyés au localStorage
+                    ///// Le 1er article est envoyé au localStorage
                 } else {
                     teddiesArray = [];
                     teddiesArray.push(carte);
